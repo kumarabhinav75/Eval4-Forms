@@ -47,7 +47,7 @@ export default class CreateForm extends Component {
     formObj.formname = formname;
     formObj.field = { ...fieldObject };
     createFormAPI(formObj);
-    this.props.navigation.navigate('MainScreen');
+    this.props.navigation.navigate('MainScreen', { formObj: this.state });
   }
 
   displayNewField = count => Array(count).fill(

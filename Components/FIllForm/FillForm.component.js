@@ -4,10 +4,15 @@ import {
 } from 'react-native';
 
 export default class FillForm extends Component {
+  // displayFields = () => {
+
+  // }
+
   render() {
+    console.log(this.props.NAME);
     return (
       <View>
-        <Text>FILL THE FORM</Text>
+        {/* {this.displayFields} */}
       </View>
     );
   }

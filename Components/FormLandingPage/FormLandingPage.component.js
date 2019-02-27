@@ -4,7 +4,6 @@ import {
 } from 'react-native';
 import FormCard from '../FormCard/FormCard.component';
 import NavBar from '../NavBar/NavBar.component';
-// import FloatingButton from '../FloatingButton/FloatingButton.component';
 import fetchFromDB from '../../src/helpers/fetchFromDB';
 import styles from './FormLanding.style';
 
@@ -26,7 +25,19 @@ export default class FormLandingPage extends Component {
     const formdata = [];
     const { forms } = this.state;
     forms.map((form) => {
-      formdata.push(<TouchableOpacity onPress={this.handleFormPress} style={{ maxHeight: 280 }}><FormCard formname={form.formname} createdAt={form.createdAt} /></TouchableOpacity>);
+      const name = form.formname;
+      console.log(name);
+      formdata.push(
+        <TouchableOpacity
+          onPress={name => this.handleFormPress(name)}
+          style={{ maxHeight: 280 }}
+        >
+          <FormCard
+            formname={form.formname}
+            createdAt={form.createdAt}
+          />
+        </TouchableOpacity>,
+      );
     });
     return formdata;
   }
@@ -35,8 +46,8 @@ export default class FormLandingPage extends Component {
     this.props.navigation.navigate('CreateFormPage');
   }
 
-  handleFormPress = () => {
-    this.props.navigation.navigate('FillFormPage');
+  handleFormPress = (name) => {
+    this.props.navigation.navigate('FillFormPage', { NAME: name });
   }
 
   render() {
