@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export default styles = StyleSheet.create({
   card: {
@@ -12,14 +12,14 @@ export default styles = StyleSheet.create({
     color: 'white',
   },
   cardText1: {
-    alignSelf:'center',
+    alignSelf: 'center',
     color: 'white',
     fontSize: 15,
     margin: 20,
     minHeight: 150,
   },
   cardText2: {
-    alignSelf:'center',
+    alignSelf: 'center',
     color: 'yellow',
     fontSize: 15,
     margin: 20,

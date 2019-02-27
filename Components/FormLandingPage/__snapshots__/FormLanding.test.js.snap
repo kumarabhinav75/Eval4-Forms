@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormLandingPage should match the snapshot 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "darkblue",
+        "height": 50,
+        "justifyContent": "space-between",
+        "top": 0,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 30,
+          "marginLeft": 20,
+        }
+      }
+    >
+      Awesome Forms
+    </Text>
+  </View>
+  <RCTScrollView
+    contentContainerStyle={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "justifyContent": "center",
+        "padding": 40,
+      }
+    }
+  >
+    <View />
+  </RCTScrollView>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#2980b9",
+        "bottom": 80,
+        "left": 300,
+        "opacity": 1,
+        "paddingVertical": 15,
+        "position": "absolute",
+        "width": 70,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "blue",
+          "fontWeight": "700",
+          "textAlign": "center",
+        }
+      }
+    >
+      New Form
+    </Text>
+  </View>
+</View>
+`;

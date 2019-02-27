@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  TextInput, TouchableOpacity, Text, KeyboardAvoidingView, Image, View, StyleSheet,
+  Text, View,
 } from 'react-native';
 import styles from './FormCard.style';
 

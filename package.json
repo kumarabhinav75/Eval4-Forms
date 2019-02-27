@@ -9,6 +9,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "babel-eslint": "^10.0.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
     "moment": "^2.24.0",
     "react": "16.6.3",
     "react-native": "0.58.5",
@@ -25,7 +27,7 @@
     "eslint-plugin-react": "^7.12.4",
     "jest": "24.1.0",
     "metro-react-native-babel-preset": "0.52.0",
-    "react-test-renderer": "16.6.3"
+    "react-test-renderer": "^16.6.3"
   },
   "jest": {
     "preset": "react-native"

@@ -1,13 +1,13 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
-export default  styles = StyleSheet.create({
+export default styles = StyleSheet.create({
   allCards: {
     justifyContent: 'center',
-    padding:40,
+    padding: 40,
     alignItems: 'center',
     // alignSelf: 'center',
     // height: 1000,
-    backgroundColor: 'purple',
+    backgroundColor: 'white',
   },
   buttonContainer: {
     backgroundColor: '#2980b9',
