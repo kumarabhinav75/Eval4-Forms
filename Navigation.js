@@ -6,7 +6,7 @@ import {
 
 import FormLandingPage from './Components/FormLandingPage/FormLandingPage.component';
 import CreateForm from './Components/CreateForm/CreateForm.component';
-import FillForm from './Components/FIllForm/FillForm.component;
+import FillForm from './Components/FIllForm/FillForm.component';
 
 
 const AppNavigator = createStackNavigator({
@@ -21,7 +21,7 @@ const AppNavigator = createStackNavigator({
   },
   FillFormPage: {
     screen: FillForm,
-  }
+  },
 }, {
   initialRouteName: 'MainScreen',
 });

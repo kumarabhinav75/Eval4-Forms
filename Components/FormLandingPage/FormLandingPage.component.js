@@ -26,7 +26,7 @@ export default class FormLandingPage extends Component {
     const formdata = [];
     const { forms } = this.state;
     forms.map((form) => {
-      formdata.push(<FormCard formname={form.formname} createdAt={form.createdAt} />);
+      formdata.push(<TouchableOpacity onPress={this.handleFormPress} style={{ maxHeight: 280 }}><FormCard formname={form.formname} createdAt={form.createdAt} /></TouchableOpacity>);
     });
     return formdata;
   }
@@ -35,13 +35,16 @@ export default class FormLandingPage extends Component {
     this.props.navigation.navigate('CreateFormPage');
   }
 
+  handleFormPress = () => {
+    this.props.navigation.navigate('FillFormPage');
+  }
+
   render() {
     return (
       <View>
         <NavBar />
         <ScrollView contentContainerStyle={styles.allCards}>
           {this.createCards()}
-          {/* {this.createCards()} */}
         </ScrollView>
         <TouchableOpacity style={styles.buttonContainer} onPress={this.floatingButtonEvent}>
           <Text style={styles.buttonText}>New Form</Text>

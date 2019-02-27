@@ -15,7 +15,10 @@ export default class FormCard extends Component {
             borderBottomWidth: 1,
           }}
         />
-        <Text style={styles.cardText2}>Created at:{this.props.createdAt}</Text>
+        <Text style={styles.cardText2}>
+Created at:
+          {this.props.createdAt}
+        </Text>
       </View>
     );
   }
