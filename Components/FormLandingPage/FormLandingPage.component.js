@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  TextInput, TouchableOpacity, Text, KeyboardAvoidingView, Image, ScrollView, StyleSheet, View, Button,
+  TouchableOpacity, Text, ScrollView, View,
 } from 'react-native';
 import FormCard from '../FormCard/FormCard.component';
 import NavBar from '../NavBar/NavBar.component';
@@ -13,13 +13,6 @@ export default class FormLandingPage extends Component {
     forms: [],
   }
 
-  createCards = () => {
-    const formdata = [];
-    this.state.forms.map((form) => {
-      formdata.push(<FormCard formname={form.formname} createdAt={form.createdAt} />);
-    });
-    return formdata;
-  }
 
   componentDidMount() {
     fetchFromDB().then((data) => {
@@ -27,6 +20,15 @@ export default class FormLandingPage extends Component {
         forms: data.data,
       });
     });
+  }
+
+  createCards = () => {
+    const formdata = [];
+    const { forms } = this.state;
+    forms.map((form) => {
+      formdata.push(<FormCard formname={form.formname} createdAt={form.createdAt} />);
+    });
+    return formdata;
   }
 
   floatingButtonEvent = () => {

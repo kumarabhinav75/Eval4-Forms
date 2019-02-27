@@ -20,14 +20,16 @@ export default class CreateForm extends Component {
   }
 
   addNewField = () => {
-    const newFieldCount = this.state.fieldCount + 1;
+    const { fieldCount } = this.state;
+    const newFieldCount = fieldCount + 1;
     this.setState({
       fieldCount: newFieldCount,
     });
   }
 
   handleFieldTextEnd = (fieldName) => {
-    const fieldArr = this.state.fields;
+    const { fields } = this.state;
+    const fieldArr = fields;
     fieldArr.push(fieldName);
     this.setState({
       fields: fieldArr,
@@ -59,13 +61,14 @@ export default class CreateForm extends Component {
   )
 
   render() {
-    console.log(this.state.fields);
+    // console.log(this.state.fields);
     // moment().format('hh:mm:ss a');
+    const { formname, fieldCount } = this.state;
     return (
       <View style={styles.container}>
         <TextInput
           placeholder="FormName"
-          value={this.state.formname}
+          value={formname}
           returnKeyType="next"
           keyboardType="email-address"
           style={styles.input}
@@ -75,7 +78,7 @@ export default class CreateForm extends Component {
           <Text style={styles.buttonText}>Add Field</Text>
         </TouchableOpacity>
         <ScrollView>
-          {this.displayNewField(this.state.fieldCount)}
+          {this.displayNewField(fieldCount)}
         </ScrollView>
         <TouchableOpacity style={styles.saveButtonContainer} onPress={this.saveForm}>
           <Text style={styles.buttonText}>Save</Text>
