@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import {
-  TextInput, TouchableOpacity, Text, KeyboardAvoidingView, Image, ScrollView, StyleSheet, View, Button
+  TextInput, TouchableOpacity, Text, ScrollView, View,
 } from 'react-native';
+import createFormAPI from '../../src/helpers/createForm';
 
 import styles from './CreateForm.style';
-export default class CreateForm extends Component {
 
+export default class CreateForm extends Component {
   state = {
-    formname :'',
-    createdAt : '',
-    fields : [],
+    formname: '',
+    fields: [],
     fieldCount: 0,
   }
 
@@ -23,7 +23,7 @@ export default class CreateForm extends Component {
     const newFieldCount = this.state.fieldCount + 1;
     this.setState({
       fieldCount: newFieldCount,
-    })
+    });
   }
 
   handleFieldTextEnd = (fieldName) => {
@@ -31,23 +31,36 @@ export default class CreateForm extends Component {
     fieldArr.push(fieldName);
     this.setState({
       fields: fieldArr,
-    })
+    });
   }
 
-  displayNewField = (count) => {
-    return Array(count).fill(
-      <TextInput
+  saveForm = () => {
+    // console.log('HELLO');
+    const { fields, formname } = this.state;
+    const fieldObject = {};
+    fields.map((fieldName) => {
+      fieldObject[fieldName] = [];
+    });
+    const formObj = {};
+    formObj.formname = formname;
+    formObj.field = { ...fieldObject };
+    createFormAPI(formObj);
+    this.props.navigation.navigate('MainScreen');
+  }
+
+  displayNewField = count => Array(count).fill(
+    <TextInput
       placeholder="Field"
       returnKeyType="next"
       keyboardType="email-address"
       style={styles.input}
       onEndEditing={e => this.handleFieldTextEnd(e.nativeEvent.text)}
-    />
-    )
-  }
+    />,
+  )
 
-  render(){
+  render() {
     console.log(this.state.fields);
+    // moment().format('hh:mm:ss a');
     return (
       <View style={styles.container}>
         <TextInput
@@ -58,13 +71,15 @@ export default class CreateForm extends Component {
           style={styles.input}
           onChangeText={this.handleFormNameChange}
         />
-        <TouchableOpacity style={styles.buttonContainer} onPress = {this.addNewField}>
+        <TouchableOpacity style={styles.buttonContainer} onPress={this.addNewField}>
           <Text style={styles.buttonText}>Add Field</Text>
         </TouchableOpacity>
-
-        <View>
+        <ScrollView>
           {this.displayNewField(this.state.fieldCount)}
-        </View>
+        </ScrollView>
+        <TouchableOpacity style={styles.saveButtonContainer} onPress={this.saveForm}>
+          <Text style={styles.buttonText}>Save</Text>
+        </TouchableOpacity>
       </View>
     );
   }

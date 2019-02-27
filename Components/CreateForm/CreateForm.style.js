@@ -19,6 +19,15 @@ export default styles = StyleSheet.create({
     width: 70,
     left: 300,
   },
+  saveButtonContainer: {
+    backgroundColor: '#2980b9',
+    paddingVertical: 15,
+    // width: 70,
+    // left: 300,
+    position:'absolute',
+    bottom: 0,
+    width:'100%'
+  },
   buttonText: {
     textAlign: 'center',
     color: '#FFFFFF',

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  SafeAreaView, Image, TouchableOpacity, Text, View
+  Text, View,
 } from 'react-native';
 
 import styles from './NavBar.style';
